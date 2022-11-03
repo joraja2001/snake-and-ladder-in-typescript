@@ -1,0 +1,36 @@
+.main{
+  background-color: brown;
+}
+
+
+.GridBox{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    padding: 0.5em;
+    height:590x;
+    width: 700px;
+    background-color: powderblue;
+}
+.GridBox>div{
+    text-align: center;
+    padding: 1em;
+    border: 2px solid;
+    border-radius: 10px;
+}
+.img{
+    height:300px ; 
+  }
+
+
+  .noimg{
+    display: none;
+  }
+  .win{
+    text-align: center;
+    margin-top: 250px;
+  }
+  .playing{
+    /* height: 30px;
+    width: 50px;
+    background-color: antiquewhite; */
+  }

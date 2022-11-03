@@ -1,0 +1,29 @@
+/* .lop{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    width: 65px;
+    height: 65px;
+    align-items: center;
+    background-color: orchid;
+    margin: 0.2em;
+    border-radius: 0.5em;
+}   */
+/* .lop{
+    background-color: red;
+    display: grid;
+} */
+/* .box{
+    grid-row: 1/4;
+    margin-left: 0.7em;
+    display: flex;
+    font-size: 4px;
+    background-color: blueviolet;
+    border-radius: 0.5em;
+}
+.players{
+    margin: 0;
+    margin-top: 3.5px;
+    font-size: 12px;
+    margin-left: 0em;
+} */

@@ -1,0 +1,128 @@
+  .visible{
+    display: block;
+    /* color: red; */
+  }
+  .play {
+    height: 30px;
+    width: 70px;
+    border: 2px solid;
+    border-radius: 2px;
+  }
+  .invisible{
+    display: none;
+  }
+  .hide{
+    
+    position: fixed;
+    
+
+  }
+  
+  .noview{
+    display: none;
+  }
+  .window{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2em;
+  }
+  .visible{
+    width: 500px;
+    height: 200px;
+    text-align: center;
+    padding-top: 35px;
+    position: fixed;
+  }
+  .nohide{
+    display: none;
+  }
+  
+  #image{
+       height: 300px;
+       width: 500px;
+       border-radius: 50px;
+  }
+  #Title{
+    text-align: center;
+  }
+  .win{
+    text-align: center;
+    color: aquamarine;
+  }
+  .winn{
+    text-align: center;
+    color: aquamarine;
+  }
+  .player{
+    color: white;
+    background-color:palevioletred;
+    border-radius: 5px;
+    font-size: smaller;
+
+  }
+  header{
+    background-color: blue;
+    height: 550px;
+    width: 500px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    
+  }
+  .butt{
+    height: 55px;
+    width: 50px;
+    background-color: white;
+  }
+  .numberinput{
+    height: 30px;
+    width: 70px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    border-radius: 50px;
+    text-align: center;
+  }
+  .numberclick{
+    height: 20px;
+    width: 50px;
+    border-radius: 10px;
+    border-color: rgb(23, 46, 39);
+    color: rgb(146, 16, 127);
+  }
+  .hide{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .nameinput{
+    height: 30px;
+    width: 70px;
+    background-color: rgb(98, 43, 226);
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    border-radius: 50px;
+    text-align: center;
+  }
+  .nameclick{
+    height: 20px;
+    width: 50px;
+    border-radius: 10px;
+    border-color: rgb(23, 46, 39);
+    color: rgb(16, 146, 75);
+  }
+
+  .view{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+  }
