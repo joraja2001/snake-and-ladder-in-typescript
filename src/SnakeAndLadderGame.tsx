@@ -2,28 +2,28 @@ import React, { SetStateAction, useState } from 'react'
 import Props from './props'
 import './main.css'
 import { gameData } from './Data'
-import { howManyPlayers , playerObject} from './gettinginput'
+import { howManyPlayers, playerObject } from './gettinginput'
 import './snake.css'
 import { playerNamesObject } from './gettingnameinput'
 
 
 let playerCount = 1
-let win=''
+let win = ''
 
 const Game = () => {
     const [playerNames, setPlayerNames] = useState(playerObject)
     const [visible, setvisible] = useState('visible')
-    const [winner,setwinner] = useState('')
-    const[random,setrandom] = useState(1)
-    const[playername,setplayername]=useState('')
-    const[position,setposition]=useState(0);
-    const [img,setimg]=useState('img')
+    const [winner, setwinner] = useState('')
+    const [point, setpoint] = useState(1)
+    const [playername, setplayername] = useState('')
+    const [position, setposition] = useState(0);
+    const [image, setimage] = useState('image')
     console.log(playerObject)
-    function dice() {
+    const dice = () => {
         let randomNumber = Math.floor(Math.random() * 6) + 1
-        setrandom(randomNumber)
+        setpoint(randomNumber)
         if (playerNames[`Player${playerCount}`] + randomNumber <= 100) {
-             setplayername(playerNamesObject[`Player${playerCount}`])
+            setplayername(playerNamesObject[`Player${playerCount}`])
             gameData.forEach(game => {
                 if (game.id === playerNames[`Player${playerCount}`]) {
                     game.players[`Player${playerCount}`] = ''
@@ -34,14 +34,14 @@ const Game = () => {
                     if (game.Torule !== '') {
                         gameData.forEach(games => {
                             if (game.Torule === games.id) {
-                                games.players[`Player${playerCount}`]='in'
+                                games.players[`Player${playerCount}`] = 'in'
                                 setPlayerNames({ ...playerNames, [`Player${playerCount}`]: game.Torule })
                                 setposition(game.Torule)
                             }
 
                         })
                     }
-                   
+
                     else {
                         game.players[`Player${playerCount}`] = 'in'
                         setPlayerNames({ ...playerNames, [`Player${playerCount}`]: game.id })
@@ -50,9 +50,9 @@ const Game = () => {
                     if (playerNames[`Player${playerCount}`] + randomNumber === 100) {
                         // winner = [`${playerNamesObject[`player${playerCount}`]} is the winner`]
                         setwinner(playerNamesObject[`Player${playerCount}`])
-                        win+='is the winner'
+                        win += 'is the winner'
                         setvisible('invisible')
-                        setimg('noimg')
+                        setimage('noimage')
                     }
 
                 }
@@ -68,27 +68,29 @@ const Game = () => {
 
     return (
         <div >
-            <div className='window'>
-                <header>
-                    <div className={img}>
-                    <img id='image' src='https://images.alphacoders.com/287/thumbbig-287313.webp' alt='lets play'></img>
-                     
-                    <h3 id='Title'>Snake&Ladder Game</h3>
-                    </div>
-                    <div className={visible}>
-                        <p className='playing'>{playername}:{random}:position:{position}</p>
-                        <button className='butt' onClick={dice}>Dice 🎲</button>
-                    </div>
-                    <h1 className='win'>{winner} {win}</h1>
-                </header>
-                <div className='main'>
-                <div className='GridBox'>
-                    {gameData.map(n => <Props value={n.id} data={n.players} symbol={n.icons} key={n.id} />)}
-                </div>
-                </div>
+            <div className='main'>
+                <div className='window'>
+                    <header>
+                        <div className={image}>
+                            <img id='image' src='https://images.alphacoders.com/287/thumbbig-287313.webp' alt='lets play'></img>
 
-                {/* <p>playerNames:{randomNumber}</p> */}
+                            <h3 id='Title'>Snake&Ladder Game</h3>
+                        </div>
+                        <div className={visible}>
+                            <p className='playing'>{playername}:{point}:position:{position}</p>
+                            <button className='butt' onClick={dice}>Dice 🎲</button>
+                        </div>
+                        <h1 className='win'>{winner} {win}</h1>
+                    </header>
 
+                    <div className='GridBox'>
+                        {gameData.map(n => <Props value={n.id} data={n.players} symbol={n.icons} key={n.id} />)}
+                    </div>
+
+
+                    {/* <p>playerNames:{randomNumber}</p> */}
+
+                </div>
             </div>
         </div>
     )

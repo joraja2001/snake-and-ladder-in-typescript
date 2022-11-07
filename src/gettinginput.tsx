@@ -24,13 +24,14 @@ export default function Input() {
             console.log(howManyPlayers)
             playerObject = playerlist
             setGameStart(true)
-            sethide('nohide')
-            
+            sethide('nohide')  
         }
     }
     return (
         <div>
-            <div className={hide}>Enter Number Of Players
+            <div className={hide}>
+                
+                Enter Number Of Players
             <input className='numberinput' type="number" value={noOfPlayers} onChange={e => { setNoOfPlayers(e.target.value) }} />
             <button className='numberclick' onClick={update}>Click</button>
             </div>
