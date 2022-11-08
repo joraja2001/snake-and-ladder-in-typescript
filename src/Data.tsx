@@ -6,16 +6,13 @@ interface game{
     players:any
 }
 
-
-
-
 let gameData:game[] = []
-let Gamebarrier:any;
-for (let i = 100; i >= 1; i -= 10) {
-    if (i % 20 === 0) {
-        for (let j = i; j > (i - 10); j--) {
+let gameBarrier:any;
+for (let cell = 100; cell >= 1; cell -= 10) {
+    if (cell % 20 === 0) {
+        for (let cell1 = cell; cell1 > (cell - 10); cell--) {
             gameData.push({
-                id: j,
+                id: cell1,
                 icons: '',
                 Torule:'',
                 Fromrule:'',
@@ -24,9 +21,9 @@ for (let i = 100; i >= 1; i -= 10) {
         }
     }
     else {
-        for (let j = (i - 9); j <= i; j++) {
+        for (let cell1 = (cell - 9); cell1 <= cell; cell1++) {
             gameData.push({
-                id: j,
+                id: cell1,
                 icons: '',
                 Torule:'',
                 Fromrule:'',
@@ -40,7 +37,7 @@ interface IBarrier{
     Torule:number,
     icon:string
 }
-let Gamestages:IBarrier[] = [{ Fromrule: 15, Torule: 4, icon: '🐍' },
+let gameStages:IBarrier[] = [{ Fromrule: 15, Torule: 4, icon: '🐍' },
 {
     Fromrule: 33,
     Torule: 12,
@@ -73,16 +70,16 @@ let Gamestages:IBarrier[] = [{ Fromrule: 15, Torule: 4, icon: '🐍' },
 }]
 
 
-gameData.forEach(element1 => {
-    Gamestages.forEach((element2)=> {
-        if (element1.id === element2.Fromrule) {
-            element1.icons = element2.icon
-            element1.Fromrule=element2.Fromrule
-            element1.Torule = element2.Torule
+gameData.forEach(players => {
+    gameStages.forEach((playerrule)=> {
+        if (players.id === playerrule.Fromrule) {
+            players.icons = playerrule.icon
+            players.Fromrule=playerrule.Fromrule
+            players.Torule = playerrule.Torule
             
         }     
     })
 });
 
 
-export  {gameData ,Gamebarrier}
+export  {gameData ,gameBarrier}

@@ -1,29 +1,29 @@
 import React, { SetStateAction, useState } from 'react'
-import Props from './props'
+import Maingrid from './mainplayer'
 import './main.css'
 import { gameData } from './Data'
-import { howManyPlayers, playerObject } from './gettinginput'
+import { howManyPlayers, playerList } from './gettinginput'
 import './snake.css'
-import { playerNamesObject } from './gettingnameinput'
+import { playerNamesList } from './gettingnameinput'
 
 
 let playerCount = 1
 let win = ''
 
 const Game = () => {
-    const [playerNames, setPlayerNames] = useState(playerObject)
+    const [playerNames, setPlayerNames] = useState(playerList)
     const [visible, setvisible] = useState('visible')
     const [winner, setwinner] = useState('')
     const [point, setpoint] = useState(1)
     const [playername, setplayername] = useState('')
     const [position, setposition] = useState(0);
     const [image, setimage] = useState('image')
-    console.log(playerObject)
+    console.log(playerList)
     const dice = () => {
         let randomNumber = Math.floor(Math.random() * 6) + 1
         setpoint(randomNumber)
         if (playerNames[`Player${playerCount}`] + randomNumber <= 100) {
-            setplayername(playerNamesObject[`Player${playerCount}`])
+            setplayername(playerNamesList[`Player${playerCount}`])
             gameData.forEach(game => {
                 if (game.id === playerNames[`Player${playerCount}`]) {
                     game.players[`Player${playerCount}`] = ''
@@ -49,7 +49,7 @@ const Game = () => {
                     }
                     if (playerNames[`Player${playerCount}`] + randomNumber === 100) {
                         // winner = [`${playerNamesObject[`player${playerCount}`]} is the winner`]
-                        setwinner(playerNamesObject[`Player${playerCount}`])
+                        setwinner(playerNamesList[`Player${playerCount}`])
                         win += 'is the winner'
                         setvisible('invisible')
                         setimage('noimage')
@@ -84,7 +84,7 @@ const Game = () => {
                     </header>
 
                     <div className='GridBox'>
-                        {gameData.map(n => <Props value={n.id} data={n.players} symbol={n.icons} key={n.id} />)}
+                        {gameData.map(n => <Maingrid value={n.id} data={n.players} symbol={n.icons} key={n.id} />)}
                     </div>
 
 

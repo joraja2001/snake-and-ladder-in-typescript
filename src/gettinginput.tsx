@@ -5,7 +5,7 @@ import Getting from './gettingnameinput'
 import {useState} from 'react'
 import React from 'react';
 let howManyPlayers:number;
-let playerObject:any;
+let playerList:any;
 let playernames:string;
 // let playingmembers;
 export default function Input() {
@@ -22,7 +22,7 @@ export default function Input() {
             playerlist[`Player${i}`] = 1
             console.log(playerlist)
             console.log(howManyPlayers)
-            playerObject = playerlist
+            playerList = playerlist
             setGameStart(true)
             sethide('nohide')  
         }
@@ -40,4 +40,4 @@ export default function Input() {
     )
 }
 
-export { howManyPlayers, playerObject }
+export { howManyPlayers, playerList }

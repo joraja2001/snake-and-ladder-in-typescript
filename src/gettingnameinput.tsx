@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Game from './SnakeAndLadderGame';
 import Input from './gettinginput';
-import { howManyPlayers, playerObject } from './gettinginput'
+import { howManyPlayers, playerList } from './gettinginput'
 let count = 1
 let playerNames:string[] = []
-let playerNamesObject:any = {};
+let playerNamesList:any = {};
 export default function Getting() {
     const [namestart, setstart] = useState<Boolean>(false)
     const [names, setnames] = useState('')
@@ -17,7 +17,7 @@ export default function Getting() {
             setstart(true)
             setview('noview')
             for (let i = 1; i <= howManyPlayers; i++) {
-                playerNamesObject[`Player${i}`] = playerNames[i - 1]
+                playerNamesList[`Player${i}`] = playerNames[i - 1]
             }
         }
         // setstart(true)
@@ -33,4 +33,4 @@ export default function Getting() {
     )
 }
 
-export { playerNamesObject }
+export { playerNamesList }
